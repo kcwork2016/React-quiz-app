@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 
 
 
-export default class Quiz extends Comment {
+export default class Quiz extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -18,9 +18,9 @@ export default class Quiz extends Comment {
             //add state val
         };
         //function goes here
-        this.handleRadioOnClick = this.handleRadioOnClick.bind(this);
-        this.handleNextOnClick = this.handleNextOnClick.bind(this);
-        this.handleFinishOnClick = this.handleFinishOnClick.bind(this);
+        // this.handleRadioOnClick = this.handleRadioOnClick.bind(this);
+        // this.handleNextOnClick = this.handleNextOnClick.bind(this);
+        // this.handleFinishOnClick = this.handleFinishOnClick.bind(this);
     }
 
     render( ) {
@@ -28,29 +28,30 @@ export default class Quiz extends Comment {
 
         return (
             <div className="quiz-container">
-                        <Question
-                            questionID={ 12 }
-                            questionTitle={ "11" }
-                            isLastPage={ false }
-                        />
+                        {/*<Question*/}
+                            {/*questionID={ 1 }*/}
+                            {/*questionTitle={ "" }*/}
+                            {/*isLastPage={ false }*/}
+                        {/*/>*/}
 
+                <Question />
             </div>
         );
     }
 }
 
 
-const defaultQuizState = {
-    questionID: '1',
-    questionTitle: 'xx',
-    selectionItems: [
-        {
-            selectionItemID:'2',
-            selectionItemBody:'assdsd'
-        }
-    ],
-    isLastPage: false
-};
+// const defaultQuizState = {
+//     questionID: '',
+//     questionTitle: '',
+//     selectionItems: [
+//         {
+//             selectionItemID:'',
+//             selectionItemName:''
+//         }
+//     ],
+//     isLastPage: false
+// };
 
 
 function mapStateToProps(state) {
@@ -73,5 +74,3 @@ Quiz.propTypes = {
     selectionItems: PropTypes.array,
     isLastPage: PropTypes.bool
 };
-
-//export default class Quiz;

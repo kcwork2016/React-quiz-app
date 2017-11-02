@@ -4,7 +4,7 @@ const defaultQuizState = {
     selectionItems: [
         {
             selectionItemID:'2',
-            selectionItemBody:'assdsd'
+            selectionItemName:'assdsd'
         }
     ],
     isLastPage: false

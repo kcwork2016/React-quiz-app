@@ -3,24 +3,27 @@ import  { PropTypes } from 'prop-types';
 import { Radio } from 'react-bootstrap';
 
 const SelectionItem = (props) => {
-    const { selectionItemID, selectionItemBody, handleSelectionItemOnClick } = props;
+    const { selectionItemID, selectionItemName, handleSelectionItemOnClick } = props;
     return (
-        <div
-            className={"answer"+selectionItemID}
+        <div className={ "answer"+selectionItemID }
             >
+            <div>
                 <Radio
-                    value={ selectionItemID }
-                    checked={ true }
+                    type="radio"
+                    value ="on"
+                    id={ selectionItemID }
+                    checked={ "" }
                     onClick={ () => handleSelectionItemOnClick( ) }
-                />{ selectionItemBody }<Radio/>
+                >{ selectionItemName }</Radio>
 
+            </div>
         </div>
     );
 };
 
 SelectionItem.propTypes = {
     selectionItemID: PropTypes.number,
-    selectionItemBody: PropTypes.string,
+    selectionItemName: PropTypes.string,
     handleSelectionItemOnClick: PropTypes.func
 };
 
