@@ -1,10 +1,9 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import { Breadcrumb, BreadcrumbItem } from 'react-bootstrap';
+import SelectionItemList from './SelectionItemList';
 
-import AnswerList from './AnswerItemList';
-
-
-export default function Question (props) {
+const Question = (props) => {
     const { questionID, questionTitle } = props;
     return (
         <div>
@@ -15,9 +14,13 @@ export default function Question (props) {
                 </BreadcrumbItem>
             </Breadcrumb>
 
-            <AnswerList/>
-
-
+            <SelectionItemList/>
         </div>
     );
-}
+};
+
+Question.propTypes = {
+    questionID: PropTypes.number,
+    questionTitle: PropTypes.string,
+    handleRadioOnClick: PropTypes.func
+};
