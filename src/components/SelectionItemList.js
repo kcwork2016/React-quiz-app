@@ -1,22 +1,31 @@
-import React, { PropTypes } from 'prop-types';
+import React from 'react';
+import { PropTypes } from 'prop-types';
 import SelectionItem from './SelectionItem';
 
-const SelectionItemList = (props) => (
-    <div className="selection-item-list">
-        { ( ( ) =>
-                    (
-                        props.SelectionItems.map(( SelectionItem ) =>
-                            <SelectionItem
-                                key={  SelectionItem.selectionItemID  }
-                                { ...SelectionItem }
-                            />
-                    )
-            ) ) ( ) }
-    </div>
-);
-
-SelectionItemList.propTypes = {
-    SelectionItems: propTypes.array
-};
-
-export default SelectionItemList;
+export default  function SelectionItemList (props) {
+    const {selectionItemID, selectionItemBody, handleSelectionItemOnClick} = props;
+    return (
+        <div className="selection-item-list">
+            <SelectionItem
+                selectionItemID = { 1 }
+                selectionItemBody= {"xxxxx"}
+                onClick={ () => handleSelectionItemOnClick() }
+             />
+            <SelectionItem
+                selectionItemID = { 2 }
+                selectionItemBody= {"xxxxx"}
+                onClick={ () => handleSelectionItemOnClick() }
+            />
+            <SelectionItem
+                selectionItemID = { 3 }
+                selectionItemBody= {"xxxxx"}
+                onClick={ () => handleSelectionItemOnClick() }
+            />
+            <SelectionItem
+                selectionItemID = { 4 }
+                selectionItemBody= {"xxxxx"}
+                onClick={ () => handleSelectionItemOnClick() }
+            />
+        </div>
+    );
+}

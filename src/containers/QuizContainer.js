@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import  { PropTypes } from 'prop-types';
-import { Breadcrumb, BreadcrumbItem } from 'react-bootstrap';
-import SelectionItemList from '../components/SelectionItemList';
 import Question from '../components/Question';
-import classNames from 'classnames';
+import quizReducer from '../reducers/quizReducer';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 
-class Quiz extends Comment {
+
+
+export default class Quiz extends Comment {
     constructor(props) {
         super(props);
         this.state = {
@@ -22,50 +24,54 @@ class Quiz extends Comment {
     }
 
     render( ) {
-        const { QuizID, QuizTitle, isLastPage } = this.props;
+        const {  questionID, questionTitle, selectionItems,   isLastPage } = this.props;
 
         return (
-            <div>
-                <Breadcrumb id={ QuizID }>
-                    <BreadcrumbItem active>
-                        <a> { QuizID } </a>
-                        <a>{ QuizTitle }</a>
-                    </BreadcrumbItem>
-                </Breadcrumb>
-
-                <AnswerItemList/>
-
-
-                <div className="button-group">
-
-                    //display on every page except the last page
-                    <Button
-                        type="button"
-                        color="primary"
-                        onClick={ () => handleNextOnClick(  ) } >
-                        Next</Button>
-
-                    //only display on last page
-                    //!!!add condition if user is in last page
-                    <Button
-                        hiddent = { !isLastPage }
-                        type="button"
-                        color="success"
-                        onClick={ () => handleFinishOnClick( ) } >
-                        Finish</Button>
-
-                </div>
-
+            <div className="quiz-container">
+                        <Question
+                            questionID={ 12 }
+                            questionTitle={ "11" }
+                            isLastPage={ false }
+                        />
 
             </div>
         );
     }
 }
 
+
+const defaultQuizState = {
+    questionID: '1',
+    questionTitle: 'xx',
+    selectionItems: [
+        {
+            selectionItemID:'2',
+            selectionItemBody:'assdsd'
+        }
+    ],
+    isLastPage: false
+};
+
+
+function mapStateToProps(state) {
+    return {
+    }
+    // const {  questionID, questionTitle, selectionItems,   isLastPage  } = state.quizReducer;
+    // return {
+    //     questionID,
+    //     questionTitle,
+    //     selectionItems,
+    //     isLastPage
+    // }
+}
+
+
+
 Quiz.propTypes = {
-    QuizID: PropTypes.number,
-    QuizTitle: PropTypes.string,
+    questionID: PropTypes.number,
+    questionTitle: PropTypes.string,
+    selectionItems: PropTypes.array,
     isLastPage: PropTypes.bool
 };
 
-export default class Quiz;
+//export default class Quiz;

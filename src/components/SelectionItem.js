@@ -23,3 +23,5 @@ SelectionItem.propTypes = {
     selectionItemBody: PropTypes.string,
     handleSelectionItemOnClick: PropTypes.func
 };
+
+export default SelectionItem;
