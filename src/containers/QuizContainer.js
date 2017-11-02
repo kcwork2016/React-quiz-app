@@ -24,13 +24,13 @@ export default class Quiz extends Component {
     }
 
     render( ) {
-        const {  questionID, questionTitle, selectionItems,   isLastPage } = this.props;
+        const {  questionID, questionName, selectionItems,   isLastPage } = this.props;
 
         return (
             <div className="quiz-container">
                         {/*<Question*/}
                             {/*questionID={ 1 }*/}
-                            {/*questionTitle={ "" }*/}
+                            {/*questionName={ "" }*/}
                             {/*isLastPage={ false }*/}
                         {/*/>*/}
 
@@ -43,7 +43,7 @@ export default class Quiz extends Component {
 
 // const defaultQuizState = {
 //     questionID: '',
-//     questionTitle: '',
+//     questionName: '',
 //     selectionItems: [
 //         {
 //             selectionItemID:'',
@@ -57,10 +57,10 @@ export default class Quiz extends Component {
 function mapStateToProps(state) {
     return {
     }
-    // const {  questionID, questionTitle, selectionItems,   isLastPage  } = state.quizReducer;
+    // const {  questionID, questionName, selectionItems,   isLastPage  } = state.quizReducer;
     // return {
     //     questionID,
-    //     questionTitle,
+    //     questionName,
     //     selectionItems,
     //     isLastPage
     // }
@@ -70,7 +70,7 @@ function mapStateToProps(state) {
 
 Quiz.propTypes = {
     questionID: PropTypes.number,
-    questionTitle: PropTypes.string,
+    questionName: PropTypes.string,
     selectionItems: PropTypes.array,
     isLastPage: PropTypes.bool
 };

@@ -5,7 +5,8 @@ import SelectionItemList from './SelectionItemList';
 import classNames from 'classnames';
 
 const Question = (props) => {
-    const { questionID, questionTitle, handleNextOnClick, handleFinishOnClick, isLastPage } = props;
+    const { questionID, questionName, SelectionItemList,  correctAnswer, isLastPage,
+        handleNextOnClick, handleFinishOnClick } = props;
 
     return (
         <Grid>
@@ -16,7 +17,7 @@ const Question = (props) => {
                             <BreadcrumbItem active>
                                 <a> { questionID } </a>
                                 <a> {
-                                //questionTitle
+                                //questionName
                                     "Question Title Header"
                                 } </a>
                             </BreadcrumbItem>
@@ -32,7 +33,7 @@ const Question = (props) => {
                                 bsStyle="primary"
                                 bsSize="small"
                                 type="button"
-                                onClick={ () => handleNextOnClick(  ) } >
+                                onClick={ () => props.handleNextOnClick(  ) } >
                                 Next</Button>
                             {
                                 //only display on last page
@@ -43,7 +44,7 @@ const Question = (props) => {
                                 bsSize="small"
                                 hiddent = { !isLastPage }
                                 type="button"
-                                onClick={ () => handleFinishOnClick( ) } >
+                                onClick={ () => props.handleFinishOnClick( ) } >
                                 Finish</Button>
                         </div>
                     </div>
@@ -57,7 +58,7 @@ Question.propTypes = {
     isLastPage: PropTypes.bool,
     selectionItems: PropTypes.array,
     questionID: PropTypes.number,
-    questionTitle: PropTypes.string,
+    questionName: PropTypes.string,
     handleNextOnClick: PropTypes.func,
     handleFinishOnClick: PropTypes.func,
     handleRadioOnClick: PropTypes.func
