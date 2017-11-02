@@ -10,20 +10,26 @@ class QuizContainer extends Component {
                 errors: 0
                 //add state val
         };
+
         this.handleRadioOnClick = this.handleRadioOnClick.bind(this);
         this.handleNextOnClick = this.handleNextOnClick.bind(this);
         this.handleFinishOnClick = this.handleFinishOnClick.bind(this);
     }
-}
+
 // functions goes here
-    handleNextOnClick( )
-{
+
 
 }
     handleFinishOnClick( )
 {
 
 }
+
+    handleNextOnClick( )
+{
+
+}
+
 
 
 render( )
