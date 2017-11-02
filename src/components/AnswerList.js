@@ -1,17 +1,18 @@
-import React from 'react';
-import { Radio } from 'react-bootstrap';
+import React, { PropTypes } from 'react';
 import AnswerItem from './AnswerItem';
 
 const AnswerList = (props) => (
-    <div className="AnswerList">
-        {(() =>
-            (
-                props.answerItem.map((answerItem)) =>
-                    <AnswerItem
-                        key={ answerItem. }
-                        {...answerItem}
-                    />
-            )
+    <div className="answer-list">
+        { ( ( ) =>
+                    (
+                        props.answerItems.map(( answerItem )) =>
+                            <AnswerItem
+                                key={  answerItem.answerID  }
+                                { ...answerItem }
+                            />
+                    )
             ))()}
     </div>
 );
+
+export default AnswerList;

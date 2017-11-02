@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { PropTypes } from 'prop-types';
 import { Radio } from 'react-bootstrap';
 
-export default function Question (props) {
-    const { answerID, answerBody } = props;
+const AnswerItem = (props) => {
+    const { answerID, answerBody, handleRadioOnClick } = props;
     return (
-        <div>
-            <Radio value={answerID}
-            />
-            <a>
-                { answerBody }
-            </a>
+        <div
+            className={"answer"+answerID}
+            >
+                <Radio
+                    value={ answerID }
+                    checked={ true }
+                    onClick={ () => handleRadioOnClick( ) }
+                />{ answerBody }<Radio/>
+
         </div>
     );
-}
+};
+
+AnswerItem.propTypes = {
+    answerID: number,
+    answerBody: string,
+    handleRadioOnClick: PropTypes.func
+};
